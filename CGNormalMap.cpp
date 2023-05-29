@@ -381,15 +381,6 @@ void display(void)
 	glPushMatrix();
 	glScaled(2, 2, 2);
 
-	int rotX = glGetUniformLocation(p, "anguloRotacaoX");
-	glUniform1f(rotX, rotacaoX);
-
-	int rotY = glGetUniformLocation(p, "anguloRotacaoY");
-	glUniform1f(rotY, rotacaoY);
-
-	int rotZ = glGetUniformLocation(p, "anguloRotacaoZ");
-	glUniform1f(rotZ, rotacaoZ);
-
 	int posix = glGetUniformLocation(p, "posicaoX");
 	glUniform1f(posix, posicaoX);
 
@@ -464,21 +455,6 @@ void key(unsigned char k, int x, int y)
 	else if (k == 'z' && escala > 0.001f)
 		escala -= 0.001f;
 
-	//ROTACAO WASDQE
-	if (k == 'w')
-		rotacaoX += 0.1f;
-	else if (k == 's')
-		rotacaoX -= 0.1f;
-
-	if (k == 'a')
-		rotacaoY -= 0.1f;
-	else if (k == 'd')
-		rotacaoY += 0.1f;
-
-	if (k == 'q')
-		rotacaoZ -= 0.1f;
-	else if (k == 'e')
-		rotacaoZ += 0.1f;
 }
 
 void keyboard_special(int key, int x, int y) {
